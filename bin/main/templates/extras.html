@@ -1,0 +1,17 @@
+<form action="/extras" method="post">
+  <input type="hidden" name="datos" th:each="d : ${datos}" th:value="${d}">
+
+  <label>Comidas incluidas:</label><br>
+  <input type="checkbox" name="comidas" value="Desayuno"> Desayuno<br>
+  <input type="checkbox" name="comidas" value="Almuerzo"> Almuerzo<br>
+  <input type="checkbox" name="comidas" value="Cena"> Cena<br>
+
+  <label>Seguro:</label>
+  <select name="seguro" required>
+    <option value="">-- Selecciona --</option>
+    <option value="Básico">Básico</option>
+    <option value="Completo">Completo</option>
+  </select><br>
+
+  <button type="submit">Ver resumen</button>
+</form>

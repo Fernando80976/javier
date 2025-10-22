@@ -1,0 +1,40 @@
+# Compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Carpetas de compilación
+/target/
+/build/
+
+# Archivos de log
+*.log
+
+# IDEs
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+# Archivos temporales
+*.tmp
+*.swp
+.DS_Store
+
+# Node (si lo usas para frontend)
+node_modules/
+.node/
+
+# Dependencias de Gradle (si lo usas)
+/.gradle/
+/out/
+
+# Archivos empaquetados
+*.zip
+*.tar.gz
+
+# Configuración de Eclipse
+.settings/
+

@@ -1,0 +1,14 @@
+<form action="/datos_personales" method="post">
+  <input type="hidden" name="datos" th:each="d : ${datos}" th:value="${d}">
+
+  <label>Nombre:</label>
+  <input type="text" name="nombre" required><br>
+
+  <label>Email:</label>
+  <input type="text" name="email" required><br>
+
+  <label>Edad:</label>
+  <input type="text" name="edad" required><br>
+
+  <button type="submit">Siguiente</button>
+</form>

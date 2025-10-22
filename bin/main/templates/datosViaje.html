@@ -1,0 +1,18 @@
+<form action="/datosViaje" method="post">
+  <input type="hidden" name="datos" th:each="d : ${datos}" th:value="${d}">
+
+  <label>Destino:</label>
+  <select name="destino" required>
+    <option value="">-- Selecciona --</option>
+    <option value="París">París</option>
+    <option value="Roma">Roma</option>
+    <option value="Tokio">Tokio</option>
+  </select><br>
+
+  <label>Tipo de viaje:</label><br>
+  <input type="radio" name="tipoViaje" value="Turismo"> Turismo<br>
+  <input type="radio" name="tipoViaje" value="Negocios"> Negocios<br>
+  <input type="radio" name="tipoViaje" value="Negocios"> Ocio<br>
+
+  <button type="submit">Siguiente</button>
+</form>
