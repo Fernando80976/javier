@@ -1,18 +1,31 @@
 <form action="/datosViaje" method="post">
-  <input type="hidden" name="datos" th:each="d : ${datos}" th:value="${d}">
+  <!-- Hidden inputs para mantener los datos anteriores -->
+  <div th:each="d : ${datos}">
+    <input type="hidden" name="datos" th:value="${d}">
+  </div>
 
+  <!-- Mostrar errores si existen -->
+  <div th:if="${errores != null}">
+    <ul>
+      <li th:each="err : ${errores}" th:text="${err}"></li>
+    </ul>
+  </div>
+
+  <!-- Destino -->
   <label>Destino:</label>
   <select name="destino" required>
     <option value="">-- Selecciona --</option>
-    <option value="París">París</option>
-    <option value="Roma">Roma</option>
-    <option value="Tokio">Tokio</option>
+    <option value="París" th:selected="${destino == 'París'}">París</option>
+    <option value="Roma" th:selected="${destino == 'Roma'}">Roma</option>
+    <option value="Tokio" th:selected="${destino == 'Tokio'}">Tokio</option>
   </select><br>
 
+  <!-- Tipo de viaje -->
   <label>Tipo de viaje:</label><br>
-  <input type="radio" name="tipoViaje" value="Turismo"> Turismo<br>
-  <input type="radio" name="tipoViaje" value="Negocios"> Negocios<br>
-  <input type="radio" name="tipoViaje" value="Negocios"> Ocio<br>
+  <input type="radio" name="tipoViaje" value="Turismo" th:checked="${tipoViaje == 'Turismo'}"> Turismo<br>
+  <input type="radio" name="tipoViaje" value="Negocios" th:checked="${tipoViaje == 'Negocios'}"> Negocios<br>
+  <input type="radio" name="tipoViaje" value="Ocio" th:checked="${tipoViaje == 'Ocio'}"> Ocio<br>
 
   <button type="submit">Siguiente</button>
+  <button type="button" onclick="history.back()">Atrás</button>
 </form>
