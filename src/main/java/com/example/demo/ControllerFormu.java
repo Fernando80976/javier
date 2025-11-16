@@ -1,3 +1,4 @@
+
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
@@ -80,6 +81,8 @@ public class ControllerFormu {
         if (!errores.isEmpty()) {
             model.addAttribute("errores", errores);
             model.addAttribute("datos", datos != null ? datos : new ArrayList<>());
+            model.addAttribute("destino", destino);
+            model.addAttribute("tipoViaje", tipoViaje);
             return "datosViaje";
         }
 
