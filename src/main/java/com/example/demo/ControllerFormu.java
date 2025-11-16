@@ -93,7 +93,6 @@ public class ControllerFormu {
         model.addAttribute("datos", datos);
         return "extras";
     }
-
     // Formulario 3 - Extras
     @PostMapping("/extras")
     public String extras(
