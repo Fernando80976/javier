@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reporte</title>
+</head>
+<body>
+
+<h2>Ranking de partidas</h2>
+
+<table border="18">
+    <tr>
+        <th>Jugador</th>
+        <th>Puntuación</th>
+        <th>Categoría</th>
+        <th>Signo</th>
+        <th>Aficciones</th>
+        <th>Fecha</th>
+    </tr>
+
+    <tr th:each="p : ${partidas}">
+        <td th:text="${p.jugador.nombre}"></td>
+        <td th:text="${p.puntuacion}"></td>
+        <td th:text="${p.categoria}"></td>
+        <td th:text="${p.signo}"></td>
+        <td th:text="${p.aficciones}"></td>
+        <td th:text="${p.fecha}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
